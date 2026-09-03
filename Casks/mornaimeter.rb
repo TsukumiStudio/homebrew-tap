@@ -23,7 +23,7 @@ cask "mornaimeter" do
 
   caveats <<~EOS
     This app is ad-hoc signed and not notarized. If Gatekeeper blocks it,
-    reinstall with: brew install --cask --no-quarantine matsufriends/tap/mornaimeter
-    (or right-click the app in Finder and choose Open).
+    remove the quarantine attribute and open it again:
+      xattr -d com.apple.quarantine /Applications/MornAIMeter.app
   EOS
 end
