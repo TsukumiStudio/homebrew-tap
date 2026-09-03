@@ -12,12 +12,18 @@ cask "mornaimeter" do
     strategy :github_latest
   end
 
-  app "MornAIMeter.app"
+  depends_on :macos
 
-  caveats "This app is ad-hoc signed and not notarized. If Gatekeeper blocks it, reinstall with: brew install --cask --no-quarantine matsufriends/tap/mornaimeter (or right-click the app in Finder and choose Open)."
+  app "MornAIMeter.app"
 
   zap trash: [
     "~/Library/Application Support/MornAIMeter",
     "~/Library/Preferences/studio.tsukumi.mornaimeter.plist",
   ]
+
+  caveats <<~EOS
+    This app is ad-hoc signed and not notarized. If Gatekeeper blocks it,
+    reinstall with: brew install --cask --no-quarantine matsufriends/tap/mornaimeter
+    (or right-click the app in Finder and choose Open).
+  EOS
 end
