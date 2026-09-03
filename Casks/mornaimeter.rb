@@ -1,6 +1,6 @@
 cask "mornaimeter" do
-  version "0.2.0"
-  sha256 "868d05a1577b4caf418bd84e067ef7b31beca18c72fdb226e6535675f6ee746f"
+  version "0.3.0"
+  sha256 "f732f077d6bcc7ecf01699ff71676d37aa5e2d4ef03dec5a930e41310aa11744"
 
   url "https://github.com/matsufriends/MornAIMeter/releases/download/v#{version}/MornAIMeter.app.zip"
   name "MornAIMeter"
