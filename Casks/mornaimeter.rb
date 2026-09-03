@@ -20,10 +20,4 @@ cask "mornaimeter" do
     "~/Library/Application Support/MornAIMeter",
     "~/Library/Preferences/studio.tsukumi.mornaimeter.plist",
   ]
-
-  caveats <<~EOS
-    This app is ad-hoc signed and not notarized. If Gatekeeper blocks it,
-    remove the quarantine attribute and open it again:
-      xattr -d com.apple.quarantine /Applications/MornAIMeter.app
-  EOS
 end
