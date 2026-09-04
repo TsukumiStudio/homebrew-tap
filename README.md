@@ -1,5 +1,5 @@
 # homebrew-tap
 
 ```sh
-brew install --cask tsukumistudio/tap/mornaimeter
+brew tap tsukumistudio/tap
 ```
