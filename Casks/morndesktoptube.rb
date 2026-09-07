@@ -1,6 +1,6 @@
 cask "morndesktoptube" do
-  version "0.4.0"
-  sha256 "7df2db3303ca68904a1717c725b340927ab66cd02fa3f315257557930073f802"
+  version "0.5.0"
+  sha256 "a9f15f144771134cd426f81468a9407b5c6297877741b8cffa8983b897841c28"
 
   url "https://github.com/TsukumiStudio/MornDesktopTube/releases/download/v#{version}/MornDesktopTube.app.zip"
   name "MornDesktopTube"
