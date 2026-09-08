@@ -1,6 +1,6 @@
 cask "mornstorage" do
-  version "0.1.6"
-  sha256 "e953338210fe91aafc4ba0517a549460f0b3aa93d4da902c2bf3379860bfccc2"
+  version "0.1.7"
+  sha256 "d1b719cfcdb867558ad570ba74d8c4acee10c0bd424eb23e3150dc7b046d8d0e"
 
   url "https://github.com/TsukumiStudio/MornStorage/releases/download/v#{version}/MornStorage.app.zip"
   name "MornStorage"
