@@ -1,6 +1,6 @@
 cask "mornrunner" do
-  version "0.2.0"
-  sha256 "5a2be34b47df2c10414b9d5433390c87281fb17f26bd581904c07450e2e05f20"
+  version "0.2.1"
+  sha256 "7a7c31d4bd0f7cbbca0e4bf27e062afeb200d636aa4c1a474cc8a6995ebbf2db"
 
   url "https://github.com/TsukumiStudio/MornRunner/releases/download/v#{version}/MornRunner.app.zip"
   name "MornRunner"
