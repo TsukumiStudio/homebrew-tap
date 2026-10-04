@@ -1,6 +1,6 @@
 cask "session-calendar" do
-  version "0.4.1"
-  sha256 "3328d1d1a8a87180659aab5eb490fc15a2b414d8aa0d1ad28ef212441200e3c1"
+  version "0.4.2"
+  sha256 "ed070312e0c6ec229c7b96450148164e54d36f8d0150274697ff330d1e5e8e1d"
 
   url "https://github.com/matsufriends/session-calendar/releases/download/v#{version}/SessionCalendar.app.zip"
   name "Session Calendar"
