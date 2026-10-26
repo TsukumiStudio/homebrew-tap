@@ -1,6 +1,6 @@
 cask "mornslackworkreminder" do
-  version "1.0.3"
-  sha256 "48119e5c94308bc940ed78868cf8e5eb851de42b0201bc557159500c4e04ba8c"
+  version "1.0.4"
+  sha256 "573f916daf24a1a0952f6c01bfa137d17c34ac551014b1f8b3faeb595e747fe4"
 
   url "https://github.com/TsukumiStudio/MornSlackWorkReminder/releases/download/v#{version}/MornSlackWorkReminder.app.zip"
   name "MornSlackWorkReminder"
