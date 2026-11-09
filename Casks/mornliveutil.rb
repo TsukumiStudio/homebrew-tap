@@ -1,6 +1,6 @@
 cask "mornliveutil" do
-  version "0.1.0"
-  sha256 "a9ea1216e9d74e4e1d1c66b811f236f3b44fcd075639d3f2203a92c1690c81e9"
+  version "0.1.1"
+  sha256 "698591c181317be46488fd851aef82306cd3fb0905e14be76f4114973bebda1f"
 
   url "https://github.com/TsukumiStudio/MornLiveUtil/releases/download/v#{version}/MornLiveUtil.app.zip"
   name "MornLiveUtil"
