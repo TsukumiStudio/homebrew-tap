@@ -1,10 +1,10 @@
 cask "morndeck" do
-  version "0.1.20"
-  sha256 "1d7896d9d7a651110ff0054f131d2feb3b054205dff26acffbcf0628bafcd6ef"
+  version "0.1.21"
+  sha256 "63494aa0809d9bf2f4721acc7f1607310fdce2f5d1b4489291e737782778ebf9"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
-  desc "Terminal multiplexer with a sidebar that tracks claude / codex state"
+  desc "claude / codex の状態をサイドバーに出すターミナル多重化ソフト"
   homepage "https://github.com/TsukumiStudio/MornDeck"
 
   # 端末から使う CLI なので .app は Caskroom に置いたまま、コマンドだけを PATH に出す
