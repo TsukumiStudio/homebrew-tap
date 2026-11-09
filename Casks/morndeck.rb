@@ -1,6 +1,6 @@
 cask "morndeck" do
-  version "0.1.22"
-  sha256 "0f78e8116d142c06b20f8620587644bd9d874c0d2899335ed5897b317821bcae"
+  version "0.1.23"
+  sha256 "2f2a1e66c94f14c06c4ff6861df6f8c813c0e20d0eb074fb4254d835f3ddc257"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
@@ -11,10 +11,8 @@ cask "morndeck" do
   binary "MornDeck.app/Contents/MacOS/mdeck"
 
   # 公証済みでも quarantine が残ると更新ごとに初回確認ダイアログで止まり、ssh 越しでは気づけない
-  postflight_steps do
-    run "/usr/bin/xattr",
-        args:           ["-dr", "com.apple.quarantine", "MornDeck.app"],
-        chdir:          ".",
-        writable_paths: ["MornDeck.app"]
+  # postflight_steps の run は upgrade で MornDeck.app を見つけられず失敗し、ロールバックも壊れる
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/MornDeck.app"]
   end
 end
