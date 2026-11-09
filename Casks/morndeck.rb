@@ -1,6 +1,6 @@
 cask "morndeck" do
-  version "0.1.1"
-  sha256 "ecb0f09f85f7e948e43721b23b43df0230818e276344ffd1a68a9e9df082309d"
+  version "0.1.2"
+  sha256 "3b700b004472f78f794147506a6bac9a626354be739e9b3926919dd00124111e"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
@@ -9,4 +9,9 @@ cask "morndeck" do
 
   # 端末から使う CLI なので .app は Caskroom に置いたまま、コマンドだけを PATH に出す
   binary "MornDeck.app/Contents/MacOS/mdeck"
+
+  # 公証済みでも quarantine が残ると更新ごとに初回確認ダイアログで止まり、ssh 越しでは気づけない
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/MornDeck.app"]
+  end
 end
