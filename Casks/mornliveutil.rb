@@ -1,6 +1,6 @@
 cask "mornliveutil" do
-  version "0.1.1"
-  sha256 "698591c181317be46488fd851aef82306cd3fb0905e14be76f4114973bebda1f"
+  version "0.2.0"
+  sha256 "ba339ebf46fdfb82cab6738839246c28c31d78be083c0836fbf9df3eb96c0df6"
 
   url "https://github.com/TsukumiStudio/MornLiveUtil/releases/download/v#{version}/MornLiveUtil.app.zip"
   name "MornLiveUtil"
@@ -8,5 +8,6 @@ cask "mornliveutil" do
   homepage "https://github.com/TsukumiStudio/MornLiveUtil"
 
   depends_on macos: :sonoma
+  depends_on arch: :arm64
   app "MornLiveUtil.app"
 end
