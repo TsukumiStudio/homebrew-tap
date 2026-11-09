@@ -1,6 +1,6 @@
 cask "morndeck" do
-  version "0.1.25"
-  sha256 "afb1bddc0923e7573c8e650ed8ce830d9ad48a487a4c34866d203713f3cf3aba"
+  version "0.1.27"
+  sha256 "992ec2a180250ba1d4c5ebbef498b62bb4b9a81b4710ab841f8e41aa088d49de"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
@@ -14,5 +14,7 @@ cask "morndeck" do
   # postflight_steps の run は upgrade で MornDeck.app を見つけられず失敗し、ロールバックも壊れる
   postflight do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/MornDeck.app"]
+    # 更新直後の初回起動は macOS の検査で数分止まることがある。フックや MCP より先にここで済ませる
+    system_command "#{staged_path}/MornDeck.app/Contents/MacOS/mdeck", args: ["--version"]
   end
 end
