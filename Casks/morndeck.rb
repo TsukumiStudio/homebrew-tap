@@ -1,17 +1,19 @@
 cask "morndeck" do
-  version "0.3.3"
-  sha256 "4ba3825dc2ae67dcc710e6c2ab159e8dd897a931ef1f77cc4d24804997aa4e90"
+  version "0.4.0"
+  sha256 "485960336d50533fd68adac4d92d09a195c55e86317e69813e68bc637997f65b"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
-  desc "Claude Code / Codex の状態をサイドバーに出すターミナル多重化ソフト"
+  desc "Terminal multiplexer with a sidebar that tracks AI coding agents"
   homepage "https://github.com/TsukumiStudio/MornDeck"
+
+  depends_on :macos
 
   # 端末から使う CLI なので .app は Caskroom に置いたまま、コマンドだけを PATH に出す
   binary "MornDeck.app/Contents/MacOS/mdeck"
 
   # 公証済みでも quarantine が残ると更新ごとに初回確認ダイアログで止まり、ssh 越しでは気づけない
-  # パスは {{staged_path}} で絶対にする (相対パス + chdir の版は upgrade で失敗した。この形は CI で install→upgrade→uninstall を確認済み)
+  # パスは {{staged_path}} で絶対にする (相対パス + chdir の版は upgrade で失敗した)
   postflight_steps do
     run "/usr/bin/xattr",
         args:           ["-dr", "com.apple.quarantine", "{{staged_path}}/MornDeck.app"],
@@ -19,4 +21,11 @@ cask "morndeck" do
     # 更新直後の初回起動は macOS の検査で数分止まることがある。フックや MCP より先にここで済ませる
     run "{{staged_path}}/MornDeck.app/Contents/MacOS/mdeck", args: ["--version"]
   end
+
+  # サーバーは upgrade をまたいで動かし続けるので、ここでは止めない (止めるのは mdeck uninstall)
+  zap trash: "~/.mdeck"
+
+  caveats <<~EOS
+    Before uninstalling, run `mdeck uninstall` to remove the agent hooks and stop the server.
+  EOS
 end
