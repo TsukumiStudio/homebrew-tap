@@ -1,6 +1,6 @@
 cask "morndeck" do
-  version "0.5.3"
-  sha256 "ddea59497f485beb54bbb79d6f27674b36759d0f9198c1f24f9dee8807546896"
+  version "0.5.4"
+  sha256 "60ff78f3a624c062844e3d3d3e0d921b19968aa7f20eed366daf71c33e997161"
 
   url "https://github.com/TsukumiStudio/MornDeck/releases/download/v#{version}/MornDeck.app.zip"
   name "MornDeck"
