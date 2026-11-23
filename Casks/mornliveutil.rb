@@ -1,8 +1,8 @@
 cask "mornliveutil" do
-  version "0.4.1"
-  sha256 "b7627e003d3ea57300874578d98349a1129baee81ada96fa9c395999a8aebd01"
+  version "0.4.2"
+  sha256 "78f9986208734aba486dd4b16a760989aa57085e8ff556091265269b3ed6608e"
 
-  url "https://github.com/TsukumiStudio/MornLiveUtil/releases/download/v#{version}/MornLiveUtil.app.zip"
+  url "https://github.com/TsukumiStudio/MornLiveUtil/releases/download/v#{version}/MornLiveUtil.dmg"
   name "MornLiveUtil"
   desc "YouTube配信のコメントをVOICEVOXで読み上げるMacアプリ"
   homepage "https://github.com/TsukumiStudio/MornLiveUtil"
